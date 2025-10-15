@@ -45,7 +45,7 @@ export default function Footer() {
                             <div className="w-12 h-12 bg-gradient-to-r from-[rgb(239,48,94)] to-[rgb(220,40,85)] rounded-xl flex items-center justify-center">
                                 <i className="ri-server-line text-white text-2xl"></i>
                             </div>
-                            <span className="text-3xl font-bold">SYS.DC</span>
+                            <span className="text-3xl font-bold">SYSDC</span>
                         </div>
                         <p className="text-gray-300 text-lg leading-relaxed mb-6 max-w-md">
                             Zamonaviy texnologiyalar bilan quvvatlanadigan ishonchli hosting xizmatlari.
@@ -58,7 +58,7 @@ export default function Footer() {
                             </div>
                             <div className="flex items-center">
                                 <i className="ri-mail-line mr-2 text-[rgb(239,48,94)]"></i>
-                                <span>info@sys.dc</span>
+                                <span>info@sysdc.uz</span>
                             </div>
                         </div>
                     </motion.div>
@@ -133,16 +133,8 @@ export default function Footer() {
 
                     <div className="text-center md:text-right">
                         <p className="text-gray-400 mb-2">
-                            © 2024 SYS.DC. Barcha huquqlar himoyalangan.
+                            © 2019 SYSDC Barcha huquqlar himoyalangan.
                         </p>
-                        <a
-                            href="https://readdy.ai/?origin=logo"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-500 hover:text-[rgb(239,48,94)] text-sm transition-colors"
-                        >
-                            Powered by Readdy
-                        </a>
                     </div>
                 </motion.div>
             </div>
