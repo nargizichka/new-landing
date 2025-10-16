@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Float, Text3D, Center } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
-import { Mesh } from 'three';
 
 // 3D Logo Component
 function Logo3D({ text, position, color }) {
@@ -139,17 +138,23 @@ export default function PartnersSection3D() {
                                 <pointLight position={[-10, -10, -5]} intensity={0.5} color="#ef305e" />
 
                                 {partners.map((partner, index) => {
-                                    const angle = (index / partners.length) * Math.PI * 2;
-                                    const radius = 4;
-                                    const x = Math.cos(angle) * radius;
-                                    const z = Math.sin(angle) * radius;
-                                    const y = Math.sin(angle * 2) * 0.5;
+                                    // Sahifa bo'ylab turli joylar
+                                    const positions = [
+                                        [ -6, 3, -3 ],
+                                        [5, 2, 2],
+                                        [ -4, -2, 1 ],
+                                        [6, -3, 2],
+                                        [0, 4, 3],
+                                        [-5, 0, -4]
+                                    ];
+
+                                    const pos = positions[index]; // har bir logoga alohida joy
 
                                     return (
                                         <Logo3D
                                             key={index}
                                             text={partner.name}
-                                            position={[x, y, z]}
+                                            position={pos}
                                             color={partner.color}
                                         />
                                     );

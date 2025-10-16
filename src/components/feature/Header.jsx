@@ -33,8 +33,16 @@ export default function Header() {
     };
 
     const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-        document.documentElement.classList.toggle('dark');
+        const newMode = !isDarkMode;
+        setIsDarkMode(newMode);
+
+        if (newMode) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
     };
 
     const navItems = [
@@ -44,6 +52,18 @@ export default function Header() {
         { label: 'Hamkorlar', href: '#partners' },
         { label: 'Aloqa', href: '#contact' }
     ];
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+            setIsDarkMode(true);
+        } else {
+            document.documentElement.classList.remove('dark');
+            setIsDarkMode(false);
+        }
+    }, []);
 
     return (
         <motion.header
